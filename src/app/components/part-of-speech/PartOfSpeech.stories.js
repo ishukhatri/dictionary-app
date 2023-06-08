@@ -5,5 +5,16 @@ export default {
   component: PartOfSpeech,
 };
 
-export const Conjunction = () => <PartOfSpeech pos="Conjunction" />;
-export const Verb = () => <PartOfSpeech pos="Verb" />;
+export const mobile = () => <PartOfSpeech pos="Conjunction" />;
+mobile.parameters = {
+  viewport: {
+    defaultViewport: "mobile",
+  },
+};
+
+export const nonMobile = () => <PartOfSpeech pos="Conjunction" />;
+nonMobile.parameters = {
+  viewport: {
+    defaultViewport: "desktop",
+  },
+};
