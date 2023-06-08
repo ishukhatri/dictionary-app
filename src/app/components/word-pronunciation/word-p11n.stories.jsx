@@ -6,12 +6,20 @@ export default {
   component: WordP11n,
 };
 
-export const Keyboard = () => (
+export const mobile = () => (
   <WordP11n phonetic={"/ˈkiːbɔːd/"} word={"Keyboard"} />
 );
+mobile.parameters = {
+  viewport: {
+    defaultViewport: "mobile",
+  },
+};
 
-export const KeyboardDarkMode = () => (
-  <div className="dark bg-black">
-    <WordP11n phonetic={"/ˈkiːbɔːd/"} word={"Keyboard"} />
-  </div>
+export const nonMobile = () => (
+  <WordP11n phonetic={"/ˈkiːbɔːd/"} word={"Keyboard"} />
 );
+nonMobile.parameters = {
+  viewport: {
+    defaultViewport: "desktop",
+  },
+};
