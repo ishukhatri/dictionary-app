@@ -1,16 +1,20 @@
 import React from "react";
+import SingleDefinition from "./single-definition/SingleDefinition";
 
-const Meaning = ({ meanings }) => {
+const DefinitionsList = ({ definitions }) => {
   return (
     <div className="mt-8">
-      <div className="text-grey-dark font-normal text-base leading-[19px]">
-        Meaning
+      <div className="text-grey-dark font-normal text-base leading-[19px] md:text-xl">
+        Definitions
       </div>
-      <div className="mt-4">
+      <div className="mt-4 md:mt-7 md:ml-6">
         <ul className="flex flex-col list-none space-y-3">
-          {meanings.map((meaning, index) => (
+          {definitions.map((definition, index) => (
             <li key={index}>
-              <MeaningItem meaning={meaning} />
+              <SingleDefinition
+                definition={definition.definition}
+                example={definition.example}
+              />
             </li>
           ))}
         </ul>
@@ -19,4 +23,4 @@ const Meaning = ({ meanings }) => {
   );
 };
 
-export default Meaning;
+export default DefinitionsList;

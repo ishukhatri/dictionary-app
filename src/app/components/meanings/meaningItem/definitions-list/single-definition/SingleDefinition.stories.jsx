@@ -1,13 +1,15 @@
-import MeaningItem from "./MeaningItem";
+import SingleDefinition from "./SingleDefinition";
 
 export default {
-  title: "Components/MeaningsList/Item",
-  component: MeaningItem,
+  title: "Components/SingleDefinition",
+  component: SingleDefinition,
 };
 
 export const mobile_with_example = () => (
-  <MeaningItem
-    meaning={"(etc.) A set of keys used to operate a typewriter, computer etc."}
+  <SingleDefinition
+    definition={
+      "(etc.) A set of keys used to operate a typewriter, computer etc."
+    }
     example={"Keyboarding is the part of this job I hate the most."}
   />
 );
@@ -18,8 +20,10 @@ mobile_with_example.parameters = {
 };
 
 export const mobile_without_example = () => (
-  <MeaningItem
-    meaning={"(etc.) A set of keys used to operate a typewriter, computer etc."}
+  <SingleDefinition
+    definition={
+      "(etc.) A set of keys used to operate a typewriter, computer etc."
+    }
     example={""}
   />
 );
@@ -30,8 +34,10 @@ mobile_without_example.parameters = {
 };
 
 export const non_mobile_with_example = () => (
-  <MeaningItem
-    meaning={"(etc.) A set of keys used to operate a typewriter, computer etc."}
+  <SingleDefinition
+    definition={
+      "(etc.) A set of keys used to operate a typewriter, computer etc."
+    }
     example={"Keyboarding is the part of this job I hate the most."}
   />
 );
@@ -42,8 +48,10 @@ non_mobile_with_example.parameters = {
 };
 
 export const non_mobile_without_example = () => (
-  <MeaningItem
-    meaning={"(etc.) A set of keys used to operate a typewriter, computer etc."}
+  <SingleDefinition
+    definition={
+      "(etc.) A set of keys used to operate a typewriter, computer etc."
+    }
     example={""}
   />
 );
