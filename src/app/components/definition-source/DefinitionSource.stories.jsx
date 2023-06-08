@@ -13,6 +13,7 @@ mobile.parameters = {
     defaultViewport: "mobile",
   },
 };
+
 export const tablet = () => (
   <DefinitionSource link="https://en.wiktionary.org/wiki/keyboard" />
 );
