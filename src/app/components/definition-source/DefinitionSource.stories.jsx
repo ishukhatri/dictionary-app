@@ -14,19 +14,10 @@ mobile.parameters = {
   },
 };
 
-export const tablet = () => (
+export const nonMobile = () => (
   <DefinitionSource link="https://en.wiktionary.org/wiki/keyboard" />
 );
-tablet.parameters = {
-  viewport: {
-    defaultViewport: "tablet",
-  },
-};
-
-export const desktop = () => (
-  <DefinitionSource link="https://en.wiktionary.org/wiki/keyboard" />
-);
-desktop.parameters = {
+nonMobile.parameters = {
   viewport: {
     defaultViewport: "desktop",
   },
