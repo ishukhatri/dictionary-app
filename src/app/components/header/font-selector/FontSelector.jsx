@@ -1,17 +1,20 @@
 import React from "react";
-import { useContext } from "react";
-import { ThemeContext } from "../../ThemeContext";
+// import { useTheme } from "@/app/hooks/useTheme";
+import { useTheme } from "../../../hooks/useTheme";
 
-const Selector = () => {
-  const { handleFontChange } = useContext(ThemeContext);
+const FontSelector = () => {
+  const { currentFont, handleFontChange } = useTheme();
+
   const handleChange = (event) => {
     const selectedFont = event.target.value;
     handleFontChange(selectedFont);
   };
+
   return (
     <div>
       <select
         className="border-0 font-bold text-sm text-black-dark text-right leading-6 p-1 mr-4"
+        value={currentFont}
         onChange={handleChange}
       >
         <option value="0">Sans Serif</option>
@@ -22,4 +25,4 @@ const Selector = () => {
   );
 };
 
-export default Selector;
+export default FontSelector;

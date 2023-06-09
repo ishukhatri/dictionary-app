@@ -1,8 +1,8 @@
 import { Switch } from "@headlessui/react";
 // import { useTheme } from "@/app/hooks/useTheme";
-import { useTheme } from "../../hooks/useTheme";
+import { useTheme } from "../../../hooks/useTheme";
 
-export default function Toggle() {
+export default function DarkModeToggle() {
   const { isDarkMode, toggleTheme } = useTheme();
 
   return (

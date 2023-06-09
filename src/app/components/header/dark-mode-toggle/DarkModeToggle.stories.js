@@ -5,4 +5,4 @@ export default {
   component: Toggle,
 };
 
-export const Default = () => <Toggle />;
+export const Default = () => <DarkModeToggle />;
