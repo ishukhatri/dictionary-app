@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import search_icon from "../assets/search-icon.svg";
+import Image from "next/image";
 
 function SearchBox() {
   const [query, setQuery] = useState("");
@@ -17,14 +17,19 @@ function SearchBox() {
         placeholder="keyword"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="bg-grey-lighter border-2 border-gray-300 h-12 w-full px-6 rounded-2xl focus:outline-none
+        className="bg-grey-lighter border-2 border-gray-300 h-12 md:h-16 w-full px-6 rounded-2xl focus:outline-none
         text-black-dark font-bold text-base leading-5"
       />
       <button
         onClick={handleSearch}
-        className="absolute right-0 top-0 mr-4 mt-4"
+        className="absolute right-0 top-0 flex items-center justify-center mr-4 mt-4"
       >
-        <img className="w-4 h-4" src={search_icon} alt="logo"></img>
+        <Image
+          src="/assets/search-icon.svg"
+          height={16}
+          width={16}
+          alt="logo"
+        />
       </button>
     </div>
   );
