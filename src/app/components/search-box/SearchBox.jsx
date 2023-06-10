@@ -22,7 +22,7 @@ function SearchBox() {
       />
       <button
         onClick={handleSearch}
-        className="absolute right-0 top-0 flex items-center justify-center mr-4 mt-4"
+        className="absolute right-0 top-0 flex items-center justify-center mr-4 mt-4 md:mr-6 md:mt-6"
       >
         <Image
           src="/assets/search-icon.svg"
