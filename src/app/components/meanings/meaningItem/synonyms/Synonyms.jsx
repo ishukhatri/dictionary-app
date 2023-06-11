@@ -1,6 +1,6 @@
 import React from "react";
 
-const Synonym = ({ synonyms }) => {
+const Synonyms = ({ synonyms }) => {
   return (
     <div className="flex flex-wrap text-base md:text-xl">
       <p className="text-grey-dark font-normal leading-5 mr-6">Synonyms</p>
@@ -18,4 +18,4 @@ const Synonym = ({ synonyms }) => {
   );
 };
 
-export default Synonym;
+export default Synonyms;
