@@ -8,6 +8,7 @@ import Header from "@components/header/Header";
 // const inter = Inter({ subsets: ["latin"] });
 
 import { useTheme } from "@hooks/useTheme";
+import SearchBox from "@/app/components/main/search-box/SearchBox";
 
 export default function DictionaryPageLayout({ children }) {
   const { isDarkMode, font } = useTheme();
@@ -15,6 +16,7 @@ export default function DictionaryPageLayout({ children }) {
   return (
     <div className={`${isDarkMode ? "dark bg-black font-lora" : ""} ${font}`}>
       <Header />
+      <SearchBox />
       {children}
     </div>
   );
