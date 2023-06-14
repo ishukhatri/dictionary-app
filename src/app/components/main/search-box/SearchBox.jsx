@@ -3,14 +3,19 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 function SearchBox() {
-  const [searchWord, setSearchWord] = useState("keyboard");
-
+  const [searchWord, setSearchWord] = useState("");
   const router = useRouter();
 
   const handleSearch = () => {
     if (searchWord) {
-      console.log("Search for: ", searchWord);
+      console.log("Search for:", searchWord);
       router.push(`/dictionary/${searchWord}`);
+    }
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSearch();
     }
   };
 
@@ -18,10 +23,11 @@ function SearchBox() {
     <div className="flex items-center justify-center w-full relative">
       <input
         type="text"
-        placeholder="keyboard"
+        placeholder="start typing any word..."
         value={searchWord}
         onChange={(e) => setSearchWord(e.target.value)}
-        className="bg-grey-lighter border-2 border-gray-300 h-12 md:h-16 w-full px-6 rounded-2xl focus:outline-none
+        onKeyDown={handleKeyDown}
+        className="bg-grey-lighter border-2 border-gray-300 h-12 md:h-16 w-full px-6 rounded-2xl focus:outline-none 
         text-black-dark font-bold text-base leading-5"
       />
       <button
