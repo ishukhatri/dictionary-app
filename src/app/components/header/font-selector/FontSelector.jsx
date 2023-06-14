@@ -4,11 +4,11 @@ import React from "react";
 import { useTheme } from "@hooks/useTheme";
 
 const FontSelector = () => {
-  const { currentFont, handleFontChange } = useTheme();
+  const { currentFont, setNewFont } = useTheme();
 
   const handleChange = (event) => {
     const selectedFont = event.target.value;
-    handleFontChange(selectedFont);
+    setNewFont(selectedFont);
   };
 
   return (
@@ -18,9 +18,9 @@ const FontSelector = () => {
         value={currentFont}
         onChange={handleChange}
       >
-        <option value="0">Sans Serif</option>
-        <option value="1">Serif</option>
-        <option value="2">Mono</option>
+        <option value="font-inter">Sans Serif</option>
+        <option value="font-lora">Serif</option>
+        <option value="font-inconsolata">Mono</option>
       </select>
     </div>
   );

@@ -21,9 +21,9 @@ module.exports = {
         "red-bright": "#FF5252",
       },
       fontFamily: {
-        inconsolata: ["Inconsolata", "monospace"],
-        inter: ["Inter", "sans-serif"],
-        lora: ["Lora", "serif"],
+        inconsolata: ["var(--font-inconsolata)", "monospace"],
+        inter: ["var(--font-inter)", "sans-serif"],
+        lora: ["var(--font-lora)", "serif"],
       },
     },
   },

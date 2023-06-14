@@ -1,8 +1,6 @@
 import "@app/globals.css";
-import { Inter } from "next/font/google";
+import { Inconsolata, Inter, Lora } from "@app/fonts.js";
 import { ThemeProvider } from "@contexts/ThemeContext";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -11,8 +9,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html
+      lang="en"
+      className={`${Inconsolata.variable} ${Inter.variable} ${Lora.variable}`}
+    >
+      <body>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
