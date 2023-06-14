@@ -1,6 +1,7 @@
+"use client";
+
 import React from "react";
-// import { useTheme } from "@/app/hooks/useTheme";
-import { useTheme } from "../../../hooks/useTheme";
+import { useTheme } from "@hooks/useTheme";
 
 const FontSelector = () => {
   const { currentFont, handleFontChange } = useTheme();

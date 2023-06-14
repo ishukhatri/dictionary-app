@@ -1,15 +1,17 @@
-import React, { useState } from "react";
-import { useRouter } from "next/router";
+"use client";
+
+import React from "react";
+// import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 function SearchBox() {
-  const [searchWord, setSearchWord] = useState("keyboard");
+  // const [searchWord, setSearchWord] = useState("keyboard");
 
-  const router = useRouter();
+  // const router = useRouter();
   const handleSearch = () => {
     if (searchWord) {
       console.log("Search for: ", query);
-      router.push(`/${searchWord}`);
+      // router.push(`/${searchWord}`);
     }
   };
 

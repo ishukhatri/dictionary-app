@@ -1,5 +1,12 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  css: {
+    styleResources: {
+      // Add your tailwind.css file here
+      include: ["./styles/tailwind.css"],
+    },
+  },
+};
 
 /**
  * module.exports = {
