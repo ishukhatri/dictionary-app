@@ -9,6 +9,7 @@ export const ThemeProvider = ({ children }) => {
   const [font, setFont] = useState("Roboto");
 
   const toggleTheme = () => {
+    console.log("called toggle theme");
     setIsDarkMode((prevMode) => !prevMode);
   };
 

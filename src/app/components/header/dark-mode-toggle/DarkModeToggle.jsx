@@ -5,6 +5,8 @@ import { useTheme } from "@hooks/useTheme";
 
 export default function DarkModeToggle() {
   const { isDarkMode, toggleTheme } = useTheme();
+  console.log("isDarkMode", isDarkMode);
+  console.log("toggleTheme", toggleTheme);
 
   return (
     <Switch
