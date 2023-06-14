@@ -6,7 +6,7 @@ export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [font, setFont] = useState("Roboto");
+  const [font, setFont] = useState("font-inconsolata");
 
   const toggleTheme = () => {
     console.log("called toggle theme");
