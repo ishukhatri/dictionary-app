@@ -5,7 +5,7 @@ import Synonyms from "./synonyms/Synonyms";
 
 const MeaningItem = ({ meaning }) => {
   return (
-    <div>
+    <div className="mt-8">
       <div>
         <PartOfSpeech pos={meaning.partOfSpeech}></PartOfSpeech>
       </div>
