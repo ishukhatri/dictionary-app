@@ -13,13 +13,18 @@ export default function DictionaryPageLayout({ children }) {
     <div
       className={`${isDarkMode ? "dark bg-black " : "bg-white"} ${font} p-6`}
     >
-      <div className="pb-6">
-        <Header />
+      <div
+        className="max-w-3xl mx-auto
+      "
+      >
+        <div className="pb-6">
+          <Header />
+        </div>
+        <div className="pb-6">
+          <SearchBox />
+        </div>
+        <div className="pb-6">{children}</div>
       </div>
-      <div className="pb-6">
-        <SearchBox />
-      </div>
-      <div className="pb-6">{children}</div>
     </div>
   );
 }

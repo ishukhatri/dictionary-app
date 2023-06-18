@@ -2,6 +2,7 @@ import React from "react";
 import WordP11n from "./word-pronunciation/word-p11n";
 import MeaningsList from "./meanings/MeaningsList";
 import DefinitionSource from "./definition-source/DefinitionSource";
+import Divider from "./common/Divider";
 
 async function getData(word) {
   try {
@@ -26,6 +27,9 @@ const Result = async ({ word }) => {
         <>
           <WordP11n word={data.word} phonetic={data.phonetic} />
           <MeaningsList meanings={data.meanings} />
+          <div className="md:my-11 my-8">
+            <Divider />
+          </div>
           <DefinitionSource link={data.sourceUrls[0]} />
         </>
       )}

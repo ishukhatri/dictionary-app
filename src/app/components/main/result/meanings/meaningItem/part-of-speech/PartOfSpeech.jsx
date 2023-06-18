@@ -1,4 +1,5 @@
 import React from "react";
+import Divider from "@components/main/result/common/Divider";
 
 const PartOfSpeech = ({ pos }) => {
   return (
@@ -6,7 +7,7 @@ const PartOfSpeech = ({ pos }) => {
       <h2 className="text-black-dark dark:text-white font-bold text-lg md:text-2xl leading-4 italic mr-4 md:mr-5">
         {pos}
       </h2>
-      <hr className="border-t border-grey-light flex-grow dark:border-black-medium" />
+      <Divider />
     </section>
   );
 };
