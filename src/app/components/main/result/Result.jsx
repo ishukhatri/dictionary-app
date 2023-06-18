@@ -3,6 +3,7 @@ import WordP11n from "./word-pronunciation/word-p11n";
 import MeaningsList from "./meanings/MeaningsList";
 import DefinitionSource from "./definition-source/DefinitionSource";
 import Divider from "./common/Divider";
+import { notFound } from "next/navigation";
 
 async function getData(word) {
   try {
@@ -14,6 +15,7 @@ async function getData(word) {
     return data[0];
   } catch (error) {
     console.error("Error fetching word data:", error);
+    return undefined;
   }
 }
 
@@ -21,6 +23,9 @@ const Result = async ({ word }) => {
   console.log("dictionary entry is to be shown for :", word);
 
   const data = await getData(word);
+  if (!data) {
+    notFound();
+  }
   return (
     <div>
       {data && (
