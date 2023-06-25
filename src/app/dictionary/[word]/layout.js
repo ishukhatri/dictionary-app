@@ -7,11 +7,13 @@ import { useTheme } from "@hooks/useTheme";
 import SearchBox from "@/app/components/main/search-box/SearchBox";
 
 export default function DictionaryPageLayout({ children }) {
-  const { isDarkMode, font } = useTheme();
+  const { isDarkMode, selectedFont } = useTheme();
 
   return (
     <div
-      className={`${isDarkMode ? "dark bg-black " : "bg-white"} ${font} p-6`}
+      className={`${
+        isDarkMode ? "dark bg-black " : "bg-white"
+      } ${selectedFont} p-6`}
     >
       <div
         className="max-w-3xl mx-auto
