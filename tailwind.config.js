@@ -25,8 +25,9 @@ module.exports = {
         inter: ["var(--font-inter)", "sans-serif"],
         lora: ["var(--font-lora)", "serif"],
       },
-      dropShadow: {
-        custom: "0px 5px 30px #A445ED",
+      boxShadow: {
+        "custom-white": "0px 5px 30px rgba(0, 0, 0, 0.1)",
+        "custom-purple": "0px 5px 30px #A445ED",
       },
     },
   },

@@ -46,7 +46,7 @@ const FontSelector2 = () => {
           >
             <Listbox.Options
               className="absolute mt-3 p-6 max-h-60 w-full overflow-auto rounded-2xl 
-            bg-white dark:bg-black-darker text-lg shadow-lg dark:drop-shadow-custom"
+            bg-white dark:bg-black-darker text-lg shadow-custom-white dark:shadow-custom-purple"
             >
               {fonts.map((font, fontIdx) => (
                 <Listbox.Option
