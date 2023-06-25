@@ -11,17 +11,13 @@ async function getData(word) {
       `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
     );
     const data = await response.json();
-    console.log("word data:" + JSON.stringify(data));
     return data[0];
   } catch (error) {
-    console.error("Error fetching word data:", error);
     return undefined;
   }
 }
 
 const Result = async ({ word }) => {
-  console.log("dictionary entry is to be shown for :", word);
-
   const data = await getData(word);
   if (!data) {
     notFound();
