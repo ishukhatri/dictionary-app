@@ -11,9 +11,9 @@ export default function DictionaryPageLayout({ children }) {
 
   return (
     <div
-      className={`${
-        isDarkMode ? "dark bg-black " : "bg-white"
-      } ${selectedFont} p-6`}
+      className={`${isDarkMode ? "dark bg-black " : "bg-white"} ${
+        selectedFont.value
+      } p-6`}
     >
       <div
         className="max-w-3xl mx-auto

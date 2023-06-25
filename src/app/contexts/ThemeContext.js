@@ -22,8 +22,8 @@ export const ThemeProvider = ({ children }) => {
   };
 
   const setNewFont = (newFont) => {
-    console.log("called set font");
-    setSelectedFont(newFont.value);
+    console.log("called set font", newFont);
+    setSelectedFont(fonts.find((font) => newFont == font.value));
   };
 
   return (

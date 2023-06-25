@@ -8,10 +8,14 @@ import { useTheme } from "@hooks/useTheme";
 const FontSelector2 = () => {
   const { selectedFont, setNewFont, fonts } = useTheme();
 
+  console.log("selectedFont", selectedFont);
+  // const { fontSelected, setFontSelected } = useState(selectedFont);
+
   const handleChange = (value) => {
     console.log("value", value);
     //todo fix this
     setNewFont(value);
+    // setFontSelected(fontSelected);
   };
 
   // const [selectedPerson, setSelectedPerson] = useState(people[0]);
