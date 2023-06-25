@@ -1,27 +1,60 @@
 "use client";
 
-import React from "react";
+import { Fragment } from "react";
+import { Listbox, Transition } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { useTheme } from "@hooks/useTheme";
 
 const FontSelector = () => {
-  const { currentFont, setNewFont } = useTheme();
+  const { selectedFont, setNewFont, fonts } = useTheme();
 
-  const handleChange = (event) => {
-    const selectedFont = event.target.value;
-    setNewFont(selectedFont);
+  const handleChange = (value) => {
+    console.log("value", value);
+    setNewFont(value);
   };
 
   return (
-    <div>
-      <select
-        className="border-0 font-bold text-sm text-black-dark text-right leading-6 p-1 mr-4"
-        value={currentFont}
-        onChange={handleChange}
-      >
-        <option value="font-inter">Sans Serif</option>
-        <option value="font-lora">Serif</option>
-        <option value="font-inconsolata">Mono</option>
-      </select>
+    <div className="w-48 font-bold text-lg dark:text-white">
+      <Listbox value={selectedFont.value} onChange={handleChange}>
+        <div className="relative">
+          <Listbox.Button className="flex items-center justify-end w-full cursor-pointer">
+            <span className="mr-4">{selectedFont.name}</span>
+            <span className="pointer-events-none">
+              <ChevronDownIcon
+                className="h-5 w-5 text-purple-bright"
+                aria-hidden="true"
+              />
+            </span>
+          </Listbox.Button>
+
+          <Transition
+            as={Fragment}
+            leave="transition ease-in duration-100"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+            className="z-10"
+          >
+            <Listbox.Options
+              className="absolute mt-3 p-6 max-h-60 w-full overflow-auto rounded-2xl 
+            bg-white dark:bg-black-darker text-lg shadow-custom-white dark:shadow-custom-purple"
+            >
+              {fonts.map((font, fontIdx) => (
+                <Listbox.Option
+                  key={fontIdx}
+                  className={({ active }) =>
+                    `relative cursor-default select-none ${font.value} ${
+                      active ? "text-purple-bright" : ""
+                    } ${fontIdx < fonts.length - 1 ? "mb-2" : ""}`
+                  }
+                  value={font.value}
+                >
+                  <span className={`block truncate`}>{font.name}</span>
+                </Listbox.Option>
+              ))}
+            </Listbox.Options>
+          </Transition>
+        </div>
+      </Listbox>
     </div>
   );
 };

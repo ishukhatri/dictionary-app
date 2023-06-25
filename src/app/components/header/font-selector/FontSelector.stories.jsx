@@ -1,7 +1,7 @@
 import FontSelector from "./FontSelector";
 
 export default {
-  title: "Components/FontSelector",
+  title: "Components/FontSelector-HUI",
   component: FontSelector,
 };
 
