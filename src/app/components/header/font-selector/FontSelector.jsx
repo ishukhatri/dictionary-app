@@ -9,12 +9,11 @@ const FontSelector = () => {
   const { selectedFont, setNewFont, fonts } = useTheme();
 
   const handleChange = (value) => {
-    console.log("value", value);
     setNewFont(value);
   };
 
   return (
-    <div className="w-48 font-bold text-lg dark:text-white">
+    <div className="w-48 font-bold text-black-dark text-lg dark:text-white">
       <Listbox value={selectedFont.value} onChange={handleChange}>
         <div className="relative">
           <Listbox.Button className="flex items-center justify-end w-full cursor-pointer">
