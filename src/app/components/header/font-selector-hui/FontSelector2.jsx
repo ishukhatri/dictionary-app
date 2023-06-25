@@ -20,25 +20,19 @@ const FontSelector2 = () => {
   console.log(selectedFont);
   console.log(fonts);
   return (
-    <div className="w-48 font-bold">
+    <div className="w-48 font-bold text-lg">
       <Listbox value={selectedFont.value} onChange={handleChange}>
-        <div className="relative mt-2">
-          <Listbox.Button
-            className="relative w-full cursor-pointer rounded-lg bg-white py-2 pl-3 pr-10 
-          text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 
-          focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 
-          focus-visible:ring-offset-orange-300"
-          >
-            <span className="block truncate text-right">
-              {selectedFont.name}
-            </span>
-            <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+        <div className="relative">
+          <Listbox.Button className="flex items-center justify-end w-full cursor-pointer bg-white">
+            <span className="mr-4">{selectedFont.name}</span>
+            <span className="pointer-events-none">
               <ChevronDownIcon
                 className="h-5 w-5 text-purple-bright"
                 aria-hidden="true"
               />
             </span>
           </Listbox.Button>
+
           <Transition
             as={Fragment}
             leave="transition ease-in duration-100"

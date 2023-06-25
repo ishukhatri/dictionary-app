@@ -11,8 +11,10 @@ const Header = () => {
         <Image src="/assets/logo.svg" height={36} width={36} alt="logo" />
       </div>
       <div className="flex justify-center items-center">
-        <FontSelector2 />
-        <FontSelector />
+        <div className="mr-7">
+          <FontSelector2 />
+        </div>
+        {/* <FontSelector /> */}
         <div className="flex border-l border-black-darkest px-4 md:px-6 items-center">
           <DarkModeToggle />
           {/* <img src={moon} alt="moon" className="ml-3"></img> */}
