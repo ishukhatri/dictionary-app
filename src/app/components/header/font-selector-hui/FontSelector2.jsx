@@ -20,10 +20,10 @@ const FontSelector2 = () => {
   console.log(selectedFont);
   console.log(fonts);
   return (
-    <div className="w-48 font-bold text-lg">
+    <div className="w-48 font-bold text-lg dark:text-white">
       <Listbox value={selectedFont.value} onChange={handleChange}>
         <div className="relative">
-          <Listbox.Button className="flex items-center justify-end w-full cursor-pointer bg-white">
+          <Listbox.Button className="flex items-center justify-end w-full cursor-pointer">
             <span className="mr-4">{selectedFont.name}</span>
             <span className="pointer-events-none">
               <ChevronDownIcon
@@ -42,15 +42,14 @@ const FontSelector2 = () => {
           >
             <Listbox.Options
               className="absolute mt-3 p-6 max-h-60 w-full overflow-auto rounded-2xl 
-            bg-white text-lg shadow-lg ring-1 ring-black ring-opacity-5 
-            focus:outline-none"
+            bg-white dark:bg-black-darker text-lg shadow-lg dark:drop-shadow-custom"
             >
               {fonts.map((font, fontIdx) => (
                 <Listbox.Option
                   key={fontIdx}
                   className={({ active }) =>
                     `relative cursor-default select-none ${font.value} ${
-                      active ? "text-purple-bright" : "text-gray-900"
+                      active ? "text-purple-bright" : ""
                     } ${fontIdx < fonts.length - 1 ? "mb-2" : ""}`
                   }
                   value={font.value}
