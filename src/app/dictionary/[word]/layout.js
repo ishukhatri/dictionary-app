@@ -15,10 +15,7 @@ export default function DictionaryPageLayout({ children }) {
         selectedFont.value
       } p-6`}
     >
-      <div
-        className="max-w-3xl mx-auto
-      "
-      >
+      <div className="max-w-3xl mx-auto">
         <div className="pb-6">
           <Header />
         </div>
