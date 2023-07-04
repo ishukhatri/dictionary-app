@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 
 export const ThemeContext = createContext();
 
@@ -13,17 +13,56 @@ export const ThemeProvider = ({ children }) => {
     { value: "font-inconsolata", name: "Mono", default: false },
   ];
 
-  const defaultFont = fonts.find((font) => font.default);
-  const [selectedFont, setSelectedFont] = useState(defaultFont);
+  const [selectedFont, setSelectedFont] = useState(
+    fonts.find((font) => font.default)
+  );
+
+  useEffect(() => {
+    // Retrieve theme values from storage on component mount
+    const storedIsDarkMode = localStorage.getItem("isDarkMode");
+    const storedSelectedFont = localStorage.getItem("selectedFont");
+
+    setIsDarkMode(storedIsDarkMode === "true");
+
+    if (storedSelectedFont) {
+      setSelectedFont(JSON.parse(storedSelectedFont));
+    }
+  }, []);
+
+  useEffect(() => {
+    // Save theme values to storage whenever they change
+    localStorage.setItem("isDarkMode", isDarkMode.toString());
+    localStorage.setItem("selectedFont", JSON.stringify(selectedFont));
+  }, [isDarkMode, selectedFont]);
+
+  useEffect(() => {
+    // Check for system theme preference on component mount
+    const prefersDarkMode = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    setIsDarkMode(prefersDarkMode);
+  }, []);
+
+  useEffect(() => {
+    // Listen for changes in system theme preference
+    const handleChange = (event) => {
+      setIsDarkMode(event.matches);
+    };
+
+    const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    darkModeQuery.addEventListener("change", handleChange);
+
+    return () => {
+      darkModeQuery.removeEventListener("change", handleChange);
+    };
+  }, []);
 
   const toggleTheme = () => {
-    console.log("called toggle theme");
     setIsDarkMode((prevMode) => !prevMode);
   };
 
   const setNewFont = (newFont) => {
-    console.log("called set font", newFont);
-    setSelectedFont(fonts.find((font) => newFont == font.value));
+    setSelectedFont(fonts.find((font) => newFont === font.value));
   };
 
   return (
