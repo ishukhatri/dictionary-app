@@ -17,6 +17,30 @@ async function getData(word) {
   }
 }
 
+function findFirstNonEmptyValue(obj, field) {
+  const search = (data) => {
+    if (data === null || typeof data !== "object") {
+      return null;
+    }
+
+    if (data[field] !== undefined && data[field] !== "") {
+      return data[field];
+    }
+
+    const values = Object.values(data);
+    for (const value of values) {
+      const result = search(value);
+      if (result !== null) {
+        return result;
+      }
+    }
+
+    return null;
+  };
+
+  return search(obj);
+}
+
 const Result = async ({ word }) => {
   const data = await getData(word);
   if (!data) {
@@ -26,7 +50,11 @@ const Result = async ({ word }) => {
     <div>
       {data && (
         <>
-          <WordP11n word={data.word} phonetic={data.phonetic} />
+          <WordP11n
+            word={data.word}
+            phonetic={data.phonetic}
+            audioUrl={findFirstNonEmptyValue(data, "audio")}
+          />
           <MeaningsList meanings={data.meanings} />
           <div className="md:my-11 my-8">
             <Divider />

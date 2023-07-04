@@ -1,7 +1,7 @@
 import React from "react";
-import Image from "next/image";
+import AudioButton from "./AudioButton";
 
-const WordP11n = ({ word, phonetic }) => {
+const WordP11n = ({ word, phonetic, audioUrl }) => {
   return (
     <div className="flex flex-row justify-between items-center">
       <div className="flex flex-col">
@@ -12,13 +12,7 @@ const WordP11n = ({ word, phonetic }) => {
           {phonetic}
         </div>
       </div>
-      <div className="h-12 w-12 md:h-[75px] md:w-[75px] relative">
-        <Image
-          fill="true"
-          src="/assets/play-button.svg"
-          alt="pronunciation play button"
-        />
-      </div>
+      <AudioButton audioUrl={audioUrl} />
     </div>
   );
 };
