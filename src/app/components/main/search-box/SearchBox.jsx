@@ -40,8 +40,9 @@ function SearchBox() {
           onKeyDown={handleKeyDown}
           className={`${
             searchWordEmpty ? "border border-red-bright border-rad" : ""
-          } bg-grey-lighter dark:bg-black-darker border-2 border-gray-300 h-12 md:h-16 w-full px-6 rounded-2xl focus:outline-none 
-        text-black-dark leading-5`}
+          } bg-grey-lighter dark:bg-black-darker dark:text-white border-2 border-gray-300 h-12 md:h-16 w-full px-6 rounded-2xl 
+          focus:outline-none text-black-dark leading-5 
+          focus:border focus:border-solid focus:border-purple-bright`}
         />
         <button
           onClick={handleSearch}
