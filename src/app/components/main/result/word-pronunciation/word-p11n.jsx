@@ -12,7 +12,7 @@ const WordP11n = ({ word, phonetic, audioUrl }) => {
           {phonetic}
         </div>
       </div>
-      <AudioButton audioUrl={audioUrl} />
+      {audioUrl && <AudioButton audioUrl={audioUrl} />}
     </div>
   );
 };
