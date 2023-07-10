@@ -3,9 +3,8 @@ import { Inconsolata, Inter, Lora } from "@app/fonts.js";
 import { ThemeProvider } from "@contexts/ThemeContext";
 
 export const metadata = {
-  title: "Dictiobary Web App",
-  description:
-    "Front end Mentor Challenge - Nextjs Latest, Reactjs, tailwindcss, Storybook",
+  title: "Dictionary Web App",
+  description: "App Build with Nextjs SSR, Reactjs, tailwindcss, Storybook",
 };
 
 export default function RootLayout({ children }) {
