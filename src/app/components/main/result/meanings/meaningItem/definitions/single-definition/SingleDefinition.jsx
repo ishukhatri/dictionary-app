@@ -7,7 +7,9 @@ const SingleDefinition = ({ definition, example }) => {
       <div className="pl-6 font-normal text-base md:text-lg leading-6">
         <p className="  text-black-dark dark:text-white">{definition}</p>
         {/* Example */}
-        {example && <p className="text-grey-dark mt-3">"{example}"</p>}
+        {example && (
+          <p className="text-grey-dark mt-3">&quot;{example}&quot;</p>
+        )}
       </div>
     </div>
   );
