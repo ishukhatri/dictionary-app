@@ -2,6 +2,8 @@
 
 import { Switch } from "@headlessui/react";
 import { useTheme } from "@hooks/useTheme";
+import { SunIcon } from "@heroicons/react/20/solid";
+import { MoonIcon } from "@heroicons/react/20/solid";
 
 export default function DarkModeToggle() {
   const { isDarkMode, toggleTheme } = useTheme();
@@ -22,7 +24,13 @@ export default function DarkModeToggle() {
         className={`${isDarkMode ? "translate-x-5" : "translate-x-0"}
             pointer-events-none inline-block h-[15px] w-[15px] transform rounded-full 
             bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
-      />
+      >
+        {isDarkMode ? (
+          <MoonIcon className="z-10" />
+        ) : (
+          <SunIcon className="z-10" />
+        )}
+      </span>
     </Switch>
   );
 }

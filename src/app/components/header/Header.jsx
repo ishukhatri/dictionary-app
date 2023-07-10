@@ -13,9 +13,8 @@ const Header = () => {
         <div className="mr-7">
           <FontSelector />
         </div>
-        <div className="flex border-l border-black-darkest px-4 md:px-6 items-center">
+        <div className="flex border-l border-black-darkest dark:border-grey-light px-4 md:px-6 items-center">
           <DarkModeToggle />
-          {/* <img src={moon} alt="moon" className="ml-3"></img> */}
         </div>
       </div>
     </header>
