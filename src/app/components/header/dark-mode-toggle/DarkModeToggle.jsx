@@ -7,7 +7,6 @@ import { MoonIcon } from "@heroicons/react/20/solid";
 
 export default function DarkModeToggle() {
   const { isDarkMode, toggleTheme } = useTheme();
-  console.log("isDarkMode", isDarkMode);
 
   return (
     <Switch
@@ -19,11 +18,13 @@ export default function DarkModeToggle() {
           focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
     >
       <span className="sr-only">Toggle Dark Mode</span>
+      <SunIcon className="absolute top-0 left-0 h-[15px] w-[15px] opacity-50" />
+      <MoonIcon className="absolute top-0 right-0 h-[15px] w-[15px] opacity-50" />
       <span
         aria-hidden="true"
         className={`${isDarkMode ? "translate-x-5" : "translate-x-0"}
             pointer-events-none inline-block h-[15px] w-[15px] transform rounded-full 
-            bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
+            bg-white shadow-lg ring-0 transition duration-200 ease-in-out z-5`}
       >
         {isDarkMode ? (
           <MoonIcon className="z-10" />

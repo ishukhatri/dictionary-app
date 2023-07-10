@@ -7,7 +7,6 @@ const AudioButton = ({ audioUrl }) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const handleClick = () => {
-    console.log("playing audio...", audioUrl);
     const audio = new Audio(audioUrl);
 
     if (isPlaying) {

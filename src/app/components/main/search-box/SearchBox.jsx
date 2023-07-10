@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -8,7 +10,6 @@ function SearchBox() {
   const router = useRouter();
 
   const handleSearch = () => {
-    console.log("handleKey Search Event:");
     if (searchWord) {
       router.push(`/dictionary/${searchWord}`);
     } else {
@@ -17,7 +18,6 @@ function SearchBox() {
   };
 
   const handleKeyDown = (event) => {
-    console.log("handleKey Event:");
     if (event.key === "Enter") {
       handleSearch();
     }
